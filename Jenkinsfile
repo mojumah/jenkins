@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Hello World"'
                 sh '''
-                    echo "Multiline shell steps works too THIS IS A NEW FEATURE"
+                    echo "The software needs to be compiled first"
                     ls -lah
                 '''
             }
@@ -16,5 +16,9 @@ pipeline {
                 sh 'echo "OK, all is good in building this software"; exit 0'
             }
         } 
+        stage('Deploy') {
+            steps {
+                sh 'echo "Now run the script to deploy this into AWS"'
+            }
     }
 }
