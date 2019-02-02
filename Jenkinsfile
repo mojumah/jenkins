@@ -10,5 +10,11 @@ pipeline {
                 '''
             }
         }
+    
+        stage('Test') {
+            steps {
+                sh 'echo "OK"; exit 1'
+            }
+        } 
     }
 }
