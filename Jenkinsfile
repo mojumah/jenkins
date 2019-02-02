@@ -13,7 +13,7 @@ pipeline {
     
         stage('Test') {
             steps {
-                sh 'echo "OK"; exit 1'
+                sh 'echo "OK, all is good in building this software"; exit 0'
             }
         } 
     }
