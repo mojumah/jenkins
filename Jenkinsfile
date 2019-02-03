@@ -5,15 +5,10 @@ pipeline {
             steps {
                 sh 'echo "Hello World"'
                 sh '''
-                    echo "The software needs to be compiled first"
+                    echo "Multiline shell steps works too"
                     ls -lah
                 '''
             }
         }
-    
-        stage('Test') {
-            steps {
-                sh 'echo "OK, all is good in building this software"; exit 0'
-            }
-        }
+    }
 }
