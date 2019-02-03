@@ -13,7 +13,9 @@ pipeline {
             deleteDir() /* clean up our workspace */
         }
         success {
-            echo 'I succeeeded!'
+            mail to: 'jumah.mohammad@gmail.com',
+                 subject: "Success Pipeline: ${currentBuild.fullDisplayName}",
+                 body: "All is well with ${env.BUILD_URL}"
         }
         unstable {
             echo 'I am unstable :/'
