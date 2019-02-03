@@ -7,4 +7,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            junit '/home/ubuntu/jenkins/*.xml'
+        }
+    }
 }
