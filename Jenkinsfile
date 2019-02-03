@@ -1,25 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Software compile"
-                    ls -lah
-                '''
+                sh 'node --version'
             }
         }
-         stage('Test') {
-             steps {
-               sh 'echo "Test the software"'
-             }
     }
-         stage('Deploy') {
-             steps {
-               sh 'echo "Deploy the software"'
-             }
-    }
-
-}
 }
