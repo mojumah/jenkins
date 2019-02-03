@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh './gradlew'
+                sh '/var/lib/jenkins/workspace/My_Pipeline_artifacts/gradlew'
             }
         }
     }
