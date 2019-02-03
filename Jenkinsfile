@@ -9,7 +9,7 @@ pipeline {
     }
     post {
         always {
-            junit '/home/ubuntu/jenkins/build/reports/*.xml'
+            junit '/home/ubuntu/jenkins/build/reports/**/*.xml'
         }
     }
 }
