@@ -1,17 +1,15 @@
 pipeline {
-    agent any 
-    
-    environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE = 'sqlite'
-    }
-
+    agent any
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh 'printenv'
+                sh './gradlew check'
             }
         }
     }
+    post {
+        always {
+            junit 'build/reports/**/*.xml'
+        }
+    }
 }
-
